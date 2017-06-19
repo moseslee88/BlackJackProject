@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class GameLogic {
+public class BlackjackGameLogic {
 	Scanner keyboard = new Scanner(System.in);
 	private int bet = 0;
 	private String name;
@@ -73,6 +73,7 @@ public class GameLogic {
 		
 		}
 	
+	//here i added a method to display the user hand and Dealer hand
 	public void displayHand(Player user, Player dealer) {
 		for (Card card1 : user.getHand().getNewhand()) {
 			System.out.println("User's hand: " + card1.getR() + " of " + card1.getS());
