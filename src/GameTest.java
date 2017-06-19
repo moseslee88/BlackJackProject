@@ -26,7 +26,7 @@ public class GameTest {
 	    input = keyboard.nextLong();
 	    if (help && (input <= 900_000_000_000_000_000L)) {
 	    	System.out.println("Let's play some BlackJack, shall we?");
-	    	GameLogic ngame = new GameLogic();
+	    	BlackjackGameLogic ngame = new BlackjackGameLogic();
 	    	d.makeandshuffleCards();
 	    	ngame.letsplay(d, user, dealer);  
 	    } 
