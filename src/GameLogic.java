@@ -48,7 +48,6 @@ public class GameLogic {
 			} else if (showDealerValue(dealer) > 21) {
 				displayHand(user, dealer);
 				dealerNoWinYet = wonorLost(user, dealer, bet);
-				System.err.println(dealerNoWinYet);
 				if (!dealerNoWinYet) {
 					checkwinner = false;
 				}
