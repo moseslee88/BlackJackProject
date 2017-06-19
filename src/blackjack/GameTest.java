@@ -1,3 +1,5 @@
+package blackjack;
+import java.time.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -17,9 +19,12 @@ public class GameTest {
 	public void playBlackJack() {
 		user = new Player("Player 1");
 		dealer = new Player();
+		LocalDate today = LocalDate.now();
+		//LocalTime timeNow = LocalTime.now();
 		long input;
 		boolean help = true;
 		Scanner keyboard=new Scanner(System.in);
+		System.out.println(" ____Today is " + today + "____");
 		System.out.println(" ____Welcome to the game of BlackJack____");
 		System.out.println(" ____also known as \"21\"____");
 		System.out.println(" ____please press any number to start____\n\n");

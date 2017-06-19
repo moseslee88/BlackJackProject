@@ -1,3 +1,4 @@
+package blackjack;
 
 public enum Suits {
 	 CLOVES("\u2663"), DIAMONDS("<>"), HEARTS("Hearts"), SPADES("\u2660");

@@ -1,5 +1,6 @@
-#Week 3 - BlackJack Project
-##This is Moses Lee's weekend project for week 3.
+#nWeek 3 - BlackJack Project
+## This is my weekend project for week 3.
+### Moses Lee, Skill Distillery student
 
 *focus on OO Class Structure
 I am going to start off with a UML.

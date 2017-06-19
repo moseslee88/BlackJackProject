@@ -1,3 +1,4 @@
+package blackjack;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -6,6 +7,7 @@ public class BlackjackGameLogic {
 	Scanner keyboard = new Scanner(System.in);
 	private int bet = 0;
 	private String name;
+	private int choose;
 	
 	public void letsplay(Deck d, Player user, Player dealer) {
 		System.out.println("\n\n\nWhat is your name, sir/ma'am?");
@@ -71,6 +73,9 @@ public class BlackjackGameLogic {
 			}
 		}
 		
+	//added a block of code to ask if user wants to play again
+		//System.out.println("Hey " + name + ": Would you like to (2)play again, or (3)end the game?");
+		choose = keyboard.nextInt();
 		}
 	
 	//here i added a method to display the user hand and Dealer hand
