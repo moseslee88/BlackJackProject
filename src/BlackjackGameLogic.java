@@ -38,7 +38,7 @@ public class BlackjackGameLogic {
 		}
 		
 		while (dealerNoWinYet)  {
-			if (showDealerValue(dealer) < 17) {
+			if (showDealerValue(dealer) >= 16) {
 				d.dealaCard(dealer);
 				displayHand(user, dealer);
 				dealerNoWinYet = wonorLost(user, dealer, bet);
