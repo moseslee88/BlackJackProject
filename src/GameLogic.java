@@ -3,14 +3,13 @@ import java.util.List;
 import java.util.Scanner;
 
 public class GameLogic {
-	Scanner input = new Scanner(System.in);
-	private int playerTotal = 0;
-	private int dealerTotal = 0;
+	Scanner keyboard = new Scanner(System.in);
+	private int bet = 0;
 	private String name;
 	
 	public void letsplay(Deck d, Player user, Player dealer) {
 		System.out.println("\n\n\nWhat is your name, sir/ma'am?");
-		name = input.nextLine();
+		name = keyboard.nextLine();
 		System.out.println("Good luck to you, " + name);
 		System.out.println("Here are your cards, " + name);
 		d.dealaCard(user);
@@ -18,7 +17,62 @@ public class GameLogic {
 		d.dealaCard(user);
 		d.dealaCard(dealer);
 		displayHand(user, dealer);
-	}
+		Boolean playerHasntWonYet = true;
+		Boolean dealerNoWinYet = true;
+		Boolean checkwinner = true;
+		
+		while (playerHasntWonYet) {
+			System.out.println("Hey " + name + ": Would you like to Hit or Stay? Press \"H\" for hit or \"S\" for stay ");
+			String input = keyboard.next();
+			if (input.equalsIgnoreCase("h")) {
+				d.dealaCard(user);
+				displayHand(user, dealer);
+				playerHasntWonYet = wonorLost(user, dealer, bet);
+				dealerNoWinYet = playerHasntWonYet;
+				if (!playerHasntWonYet) {
+					checkwinner = false;
+				}
+			} else {
+				playerHasntWonYet = false;
+			}
+		}
+		
+		while (dealerNoWinYet)  {
+			if (showDealerValue(dealer) < 17) {
+				d.dealaCard(dealer);
+				displayHand(user, dealer);
+				dealerNoWinYet = wonorLost(user, dealer, bet);
+				if (!dealerNoWinYet) {
+					checkwinner = false;
+				}
+			} else if (showDealerValue(dealer) > 21) {
+				displayHand(user, dealer);
+				dealerNoWinYet = wonorLost(user, dealer, bet);
+				System.err.println(dealerNoWinYet);
+				if (!dealerNoWinYet) {
+					checkwinner = false;
+				}
+			} else {
+				displayHand(user, dealer);
+				dealerNoWinYet = false;
+			}
+		}
+		
+		//here I check who actually wins between Dealer and User
+		if (checkwinner) {
+			if (showDealerValue(dealer) > showTotalValue(user)) {
+				System.out.println("Dealer wins");
+				resetEachHand(user, dealer);
+			} else if (showDealerValue(dealer) < showTotalValue(user)) {
+				System.out.println("Player wins");
+				resetEachHand(user, dealer);
+			} else {
+				System.out.println("Push!!!!");
+				resetEachHand(user, dealer);
+			}
+		}
+		
+		}
 	
 	public void displayHand(Player user, Player dealer) {
 		for (Card card1 : user.getHand().getNewhand()) {
@@ -60,7 +114,27 @@ public class GameLogic {
 		return total;
 	}
 	
-	public void resetHands(Player user, Player dealer) {
+	public boolean wonorLost(Player user, Player dealer, int bet) {
+		if (showTotalValue(user) == 21 && showDealerValue(dealer) == 21) {
+			System.out.println("Push");
+			return false;
+		} else if (showDealerValue(dealer) == 21) {
+			System.out.println("Dealer wins! I'm sorry, try again next round. ");
+			resetEachHand(user, dealer);
+			return false;
+		} else if (showTotalValue(user) > 21) {
+			System.out.println("You bust! ");
+			resetEachHand(user, dealer);
+			return false;
+		} else if (showDealerValue(dealer) > 21) {
+			System.out.println("Dealer bust! You win, " + name + "!");
+			resetEachHand(user, dealer);
+			return false;
+		}
+		return true;
+	}
+	
+	public void resetEachHand(Player user, Player dealer) {
 		List<Card> handFirst = new ArrayList<Card>(2);
 		List<Card> handDealer = new ArrayList<Card>(2);
 

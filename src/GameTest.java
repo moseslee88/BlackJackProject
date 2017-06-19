@@ -33,20 +33,9 @@ public class GameTest {
 	    else {
 	    	System.out.println("Please enter an actual number greater than zero that makes logical sense.");
 	    }
-//		List<Card> d = new ArrayList<>(52);
-//	     for (Actualcard a: Actualcard.values()) {
-//		        for (Rankvalue r : Rankvalue.values()) {
-//		        	for (Suits s : Suits.values()) {
-//		        		d.add(new Card( a, r, s));
-//		        	}
-//		        }
-//		 }	
-//		System.out.println("\n\nThese are the cards shuffled!\n\n");
-//		Collections.shuffle(d);
-//        
-//        for (Card card1 : d) {
-//        	System.out.println(card1); 
-//        }
+
+	    
+	    
 	    keyboard.close();
 	}
 }
