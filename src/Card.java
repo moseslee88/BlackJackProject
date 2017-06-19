@@ -29,8 +29,8 @@ public void setA(Actualcard a) {
 
 
 
-public Rankvalue getR() {
-	return r;
+public int getR() {
+	return r.getValue();
 }
 
 
@@ -39,8 +39,8 @@ public void setR(Rankvalue r) {
 }
 
 
-public Suits getS() {
-	return s;
+public String getS() {
+	return s.getValue2();
 }
 
 

@@ -19,7 +19,7 @@ public class Hand {
 	}
 		
 	public void getValueHand() {
-		System.out.println("the value of your current hand is: ");
+		System.out.println("Value of your current hand is: ");
 	}
 	
 }

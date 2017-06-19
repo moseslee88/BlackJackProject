@@ -7,7 +7,7 @@ public class Deck {
 	      static List<Card> deckofcards = new ArrayList<>(52);
           //I've created a deck of 52 cards and now I will have Java shuffle it
 	  
-	       void shuffleCards(){
+	       void makeandshuffleCards(){
 		     for (Actualcard a: Actualcard.values()) {
 			        for (Rankvalue r : Rankvalue.values()) {
 			        	for (Suits s : Suits.values()) {
@@ -16,12 +16,12 @@ public class Deck {
 			        }
 			 }			        
 			        //here i print the cards after a shuffle of the cards
-			        System.out.println("\n\nThese are the cards shuffled!\n\n");
+			        System.out.println("\n\nThe cards are now being shuffled!\n\n");
 			        Collections.shuffle(deckofcards);
 			        
 			        for (Card card1 : deckofcards) {
 			        	System.out.println(card1); 
-			        }
+			        } 
 			        
 	   }
 	      

@@ -1,6 +1,6 @@
 
 public enum Suits {
-	 CLOVES("\u2663"), DIAMONDS("u\2666"), HEARTS("u\2665"), SPADES("\u2660");
+	 CLOVES("\u2663"), DIAMONDS("<>"), HEARTS("Hearts"), SPADES("\u2660");
 
 	    private String value2;
 
