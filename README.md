@@ -1,5 +1,5 @@
-#nWeek 3 - BlackJack Project
-## This is my weekend project for week 3.
+## Week 3 - BlackJack Project
+# This is my weekend project for week 3.
 ### Moses Lee, Skill Distillery student
 
 *focus on OO Class Structure
