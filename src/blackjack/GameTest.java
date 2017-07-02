@@ -27,16 +27,20 @@ public class GameTest {
 		System.out.println(" ____Today is " + today + "____");
 		System.out.println(" ____Welcome to the game of BlackJack____");
 		System.out.println(" ____also known as \"21\"____");
-		System.out.println(" ____please press any number to start____\n\n");
+                System.out.println(" ____please press any number to start____\n\n");
 	    input = keyboard.nextLong();
 	    if (help && (input <= 900_000_000_000_000_000L)) {
-	    	System.out.println("Let's play some BlackJack, shall we?");
+	        System.out.println("Enter how many rounds you'd like to play: ");
+	        int rd =keyboard.nextInt();
+	        System.out.println("Let's play some BlackJack, shall we?");
 	    	BlackjackGameLogic ngame = new BlackjackGameLogic();
-	    	d.makeandshuffleCards();
-	    	ngame.letsplay(d, user, dealer);  
+	    	     for (int i = 0; i < rd; i++) {
+	    	         d.makeandshuffleCards();
+	    	         ngame.letsplay(d, user, dealer);  
+	    	}
 	    } 
 	    else {
-	    	System.out.println("Please enter an actual number greater than zero that makes logical sense.");
+	    	System.out.println("Please enter actual number greater than zero that makes logical sense.");
 	    }
 
 	    
